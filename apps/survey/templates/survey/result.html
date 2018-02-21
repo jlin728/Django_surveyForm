@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Result Form</title>
+</head>
+<body>
+
+    <h3>Thanks for submitting this form! <br>
+        You have submitted this form {{request.session.counter}} times now.</h3>
+    <form action = '/' method="POST">
+        {% csrf_token %}
+        Submitted Information<br>
+        Name:   {{request.session.name}}<br>
+        Dojo Location:  {{request.session.location}}<br>
+        Favorite Language:  {{request.session.language}}<br>
+        Comments:   {{request.session.comment}}<br>
+        <br>
+        <input type = "submit" value = "Go Back" name = "back"> 
+
+    </form>
+</body>
+</html>

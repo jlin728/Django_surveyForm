@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Form</title>
+</head>
+<body>
+    <form action = "/process" method = "POST">
+        {% csrf_token %}
+        <input type = "text" placeholder = "Name" name = "name"><br>
+        Dojo Location: 
+        <select name="location">
+            <option value="DC">DC</option>
+            <option value="LA">LA</option>
+            <option value="SF">SF</option>
+            <option value="NYC">NYC</option>
+          </select><br>
+        Favorite Language: 
+          <select name="language">
+              <option value="python">Python</option>
+              <option value="ruby">Ruby</option>
+              <option value="java">Java</option>
+              <option value="js">JavaScript</option>
+            </select><br>    
+        Comment (optional)<br>
+        <textarea rows="4" cols="50" name="comment" placeholder="Enter Text"></textarea><br>
+        <input type = "submit" value = "Submit" name = "counter">
+    
+    </form>
+</body>
+</html>
